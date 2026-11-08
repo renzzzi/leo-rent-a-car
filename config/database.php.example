@@ -1,0 +1,9 @@
+<?php
+
+return [
+    'host' => '127.0.0.1',
+    'dbname' => 'leo_rent_a_car_db',
+    'username' => 'root',
+    'password' => '',
+    'charset' => 'utf8mb4'
+];

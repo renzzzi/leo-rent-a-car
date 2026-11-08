@@ -1,0 +1,10 @@
+/**
+ * Imported in header.php and serves as custom CSS for certain styling
+ * to certain HTML elements that simple bootstrap/js can't provide.
+ */
+
+ 
+/* Add Transaction Form Color Fade (inventory_view) */
+.transition {
+    transition: all .15s ease-in-out;
+}
