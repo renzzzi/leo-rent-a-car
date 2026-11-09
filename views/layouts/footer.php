@@ -7,7 +7,7 @@
                 &copy; <?= date('Y') ?> <strong class="text-slate-700">Leo Rent-A-Car</strong> Operations System. All rights reserved.
             </div>
             <div class="flex items-center gap-3">
-                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[3px] bg-slate-100 border border-slate-200 text-slate-600 text-[11px] font-medium">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-[11px] font-medium">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                     System Live &bull; Encrypted
                 </span>

@@ -413,7 +413,7 @@ try {
 <!-- 1. CREATE DRIVER MODAL -->
 <div id="modal-create-driver" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop-custom overflow-y-auto">
     <div class="bg-white border border-slate-200/80 rounded-2xl shadow-2xl max-w-md w-full my-auto overflow-hidden">
-        <div class="px-6 py-4.5 bg-white border-b border-slate-100 flex items-center justify-between">
+        <div class="px-6 py-5 bg-white border-b border-slate-100 flex items-center justify-between">
             <div class="flex items-center gap-2.5">
                 <div class="w-8 h-8 rounded-lg bg-red-50 text-red-600 border border-red-100/80 flex items-center justify-center">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

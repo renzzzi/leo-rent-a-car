@@ -1,5 +1,8 @@
 <?php
 
+// Start output buffering to prevent headers-already-sent errors on redirects
+ob_start();
+
 // Main Application Entry Point (Front Controller)
 session_start();
 
@@ -55,12 +58,17 @@ $pageToShow = __DIR__ . "/../views/{$folderName}/{$pageToLoad}_view.php";
 if (file_exists($pageToShow)) {
     require_once $pageToShow;
 } else {
-    echo '<div class="max-w-4xl mx-auto my-12 p-8 bg-white border border-slate-200 rounded-[4px] text-center shadow-sm">
+    echo '<div class="max-w-4xl mx-auto my-12 p-8 bg-white border border-slate-200/80 rounded-2xl text-center shadow-sm">
             <h3 class="text-base font-bold text-slate-900 mb-2">Module Under Construction</h3>
             <p class="text-sm text-slate-500">The <code>' . htmlspecialchars($pageToLoad) . '</code> view has not been initialized yet.</p>
-            <a href="index.php?view=bookings" class="inline-block mt-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold rounded-[4px] transition-colors">Return to Bookings</a>
+            <a href="index.php?view=bookings" class="inline-block mt-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold rounded-lg shadow-sm transition-colors">Return to Bookings</a>
           </div>';
 }
 
 // Load Global Layout Footer
 require_once __DIR__ . '/../views/layouts/footer.php';
+
+// Flush buffered output to browser
+if (ob_get_level() > 0) {
+    ob_end_flush();
+}

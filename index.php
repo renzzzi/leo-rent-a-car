@@ -1,4 +1,5 @@
 <?php
+ob_start();
 /**
  * Leo Rent-A-Car – Admin / Manager Login Landing Page
  */
