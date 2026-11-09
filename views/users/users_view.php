@@ -10,8 +10,8 @@ $currentRole   = $_SESSION['role'] ?? '';
 $currentUserId = (int)($_SESSION['user_id'] ?? 0);
 
 if ($currentRole !== 'Owner') {
-    echo '<div class="max-w-2xl mx-auto my-16 p-8 bg-white border border-red-200 rounded-[4px] text-center shadow-xs">
-            <div class="w-12 h-12 mx-auto rounded-[4px] bg-red-100 text-red-600 flex items-center justify-center mb-3">
+    echo '<div class="max-w-2xl mx-auto my-16 p-8 bg-white border border-red-200/80 rounded-2xl text-center shadow-sm">
+            <div class="w-12 h-12 mx-auto rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3 border border-red-100">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m0 0v2m0-2h2m-2 0H10m4-11a4 4 0 00-8 0v4h8V4z" />
                 </svg>
@@ -20,7 +20,7 @@ if ($currentRole !== 'Owner') {
             <p class="text-xs text-slate-500 max-w-md mx-auto mb-4">
                 Managing Manager user accounts is strictly reserved for the business Owner. Your current role is <strong>' . htmlspecialchars($currentRole) . '</strong>.
             </p>
-            <a href="index.php?view=bookings" class="inline-block px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold rounded-[4px] transition-colors">
+            <a href="index.php?view=bookings" class="inline-block px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold rounded-lg shadow-sm transition-colors">
                 Return to Bookings
             </a>
           </div>';

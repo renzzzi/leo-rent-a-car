@@ -58,8 +58,8 @@ $currentView = $_GET['view'] ?? 'bookings';
                 <!-- Left: Brand Logo & Title -->
                 <div class="flex items-center gap-3">
                     <a href="index.php?view=bookings" class="flex items-center gap-3 group">
-                        <div class="w-10 h-10 rounded-[4px] border border-red-600 bg-white p-0.5 flex items-center justify-center shadow-xs overflow-hidden">
-                            <img src="assets/images/Leo-rent-a-car.jpg" alt="Leo Logo" class="w-full h-full object-cover rounded-[2px]" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'font-extrabold text-red-600 text-sm\'>LR</span>';">
+                        <div class="w-10 h-10 rounded-xl border border-red-200 bg-white p-0.5 flex items-center justify-center shadow-xs overflow-hidden">
+                            <img src="assets/images/Leo-rent-a-car.jpg" alt="Leo Logo" class="w-full h-full object-cover rounded-lg" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'font-extrabold text-red-600 text-sm\'>LR</span>';">
                         </div>
                         <div>
                             <div class="text-base font-extrabold tracking-tight text-slate-900 group-hover:text-red-600 transition-colors">
@@ -75,30 +75,30 @@ $currentView = $_GET['view'] ?? 'bookings';
                     <div class="hidden md:block h-6 w-px bg-slate-200 ml-3"></div>
 
                     <!-- Main Navigation Tabs -->
-                    <nav class="hidden md:flex items-center gap-1 ml-4">
+                    <nav class="hidden md:flex items-center gap-1.5 ml-4">
                         <a href="index.php?view=bookings"
-                           class="px-3.5 py-1.5 text-xs font-bold rounded-[4px] transition-colors <?= ($currentView === 'bookings') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
+                           class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors <?= ($currentView === 'bookings') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
                             Bookings
                         </a>
                         <a href="index.php?view=vehicles"
-                           class="px-3.5 py-1.5 text-xs font-bold rounded-[4px] transition-colors <?= ($currentView === 'vehicles') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
+                           class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors <?= ($currentView === 'vehicles') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
                             Vehicles
                         </a>
                         <a href="index.php?view=customers"
-                           class="px-3.5 py-1.5 text-xs font-bold rounded-[4px] transition-colors <?= ($currentView === 'customers') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
+                           class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors <?= ($currentView === 'customers') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
                             Customers
                         </a>
                         <a href="index.php?view=drivers"
-                           class="px-3.5 py-1.5 text-xs font-bold rounded-[4px] transition-colors <?= ($currentView === 'drivers') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
+                           class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors <?= ($currentView === 'drivers') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
                             Drivers
                         </a>
                         <a href="index.php?view=maintenance"
-                           class="px-3.5 py-1.5 text-xs font-bold rounded-[4px] transition-colors <?= ($currentView === 'maintenance') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
+                           class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors <?= ($currentView === 'maintenance') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
                             Maintenance
                         </a>
                         <?php if ($_loggedRole === 'Owner'): ?>
                         <a href="index.php?view=users"
-                           class="px-3.5 py-1.5 text-xs font-bold rounded-[4px] transition-colors <?= ($currentView === 'users') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
+                           class="px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-colors <?= ($currentView === 'users') ? 'bg-red-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100' ?>">
                             Managers
                         </a>
                         <?php endif; ?>
@@ -107,14 +107,14 @@ $currentView = $_GET['view'] ?? 'bookings';
 
                 <!-- Right: User Identity & Sign Out -->
                 <div class="flex items-center gap-3">
-                    <div class="flex items-center gap-2 px-2.5 py-1 bg-slate-100 border border-slate-200 rounded-[4px]">
-                        <div class="w-6 h-6 rounded-[2px] bg-slate-800 text-white flex items-center justify-center text-[11px] font-bold">
+                    <div class="flex items-center gap-2 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg">
+                        <div class="w-6 h-6 rounded-md bg-slate-800 text-white flex items-center justify-center text-[11px] font-bold">
                             <?= strtoupper(substr($_loggedUser, 0, 1)) ?>
                         </div>
                         <div class="text-xs">
                             <span class="font-bold text-slate-800"><?= $_loggedUser ?></span>
                             <?php if (!empty($_loggedRole)): ?>
-                                <span class="ml-1 px-1.5 py-0.5 text-[10px] font-bold bg-red-100 text-red-700 border border-red-200 rounded-[2px]">
+                                <span class="ml-1 px-2 py-0.5 text-[10px] font-semibold bg-red-50 text-red-700 border border-red-200/80 rounded-md">
                                     <?= $_loggedRole ?>
                                 </span>
                             <?php endif; ?>
@@ -124,7 +124,7 @@ $currentView = $_GET['view'] ?? 'bookings';
                     <a href="index.php?logout=1"
                        onclick="return confirm('Sign out of Leo Rent-A-Car operations portal?');"
                        title="Sign Out"
-                       class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-slate-600 hover:text-red-600 hover:bg-red-50 border border-slate-200 hover:border-red-200 rounded-[4px] transition-colors">
+                       class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-600 hover:text-red-600 hover:bg-red-50 border border-slate-200 hover:border-red-200 rounded-lg transition-colors">
                         <svg class="w-3.5 h-3.5 text-slate-500 hover:text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                         </svg>
@@ -137,28 +137,28 @@ $currentView = $_GET['view'] ?? 'bookings';
             <!-- Mobile Navigation Bar -->
             <div class="md:hidden flex items-center gap-1 py-2 border-t border-slate-100 overflow-x-auto">
                 <a href="index.php?view=bookings"
-                   class="px-2.5 py-1 text-xs font-bold whitespace-nowrap rounded-[4px] <?= ($currentView === 'bookings') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
+                   class="px-2.5 py-1 text-xs font-semibold whitespace-nowrap rounded-lg <?= ($currentView === 'bookings') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
                     Bookings
                 </a>
                 <a href="index.php?view=vehicles"
-                   class="px-2.5 py-1 text-xs font-bold whitespace-nowrap rounded-[4px] <?= ($currentView === 'vehicles') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
+                   class="px-2.5 py-1 text-xs font-semibold whitespace-nowrap rounded-lg <?= ($currentView === 'vehicles') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
                     Vehicles
                 </a>
                 <a href="index.php?view=customers"
-                   class="px-2.5 py-1 text-xs font-bold whitespace-nowrap rounded-[4px] <?= ($currentView === 'customers') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
+                   class="px-2.5 py-1 text-xs font-semibold whitespace-nowrap rounded-lg <?= ($currentView === 'customers') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
                     Customers
                 </a>
                 <a href="index.php?view=drivers"
-                   class="px-2.5 py-1 text-xs font-bold whitespace-nowrap rounded-[4px] <?= ($currentView === 'drivers') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
+                   class="px-2.5 py-1 text-xs font-semibold whitespace-nowrap rounded-lg <?= ($currentView === 'drivers') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
                     Drivers
                 </a>
                 <a href="index.php?view=maintenance"
-                   class="px-2.5 py-1 text-xs font-bold whitespace-nowrap rounded-[4px] <?= ($currentView === 'maintenance') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
+                   class="px-2.5 py-1 text-xs font-semibold whitespace-nowrap rounded-lg <?= ($currentView === 'maintenance') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
                     Maintenance
                 </a>
                 <?php if ($_loggedRole === 'Owner'): ?>
                 <a href="index.php?view=users"
-                   class="px-2.5 py-1 text-xs font-bold whitespace-nowrap rounded-[4px] <?= ($currentView === 'users') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
+                   class="px-2.5 py-1 text-xs font-semibold whitespace-nowrap rounded-lg <?= ($currentView === 'users') ? 'bg-red-600 text-white' : 'text-slate-600' ?>">
                     Managers
                 </a>
                 <?php endif; ?>

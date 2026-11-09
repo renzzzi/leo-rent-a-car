@@ -136,7 +136,7 @@ function viewBookingDetails(b) {
     const badgeContainer = document.getElementById('view-status-badge');
     if (badgeContainer && b.status_badge) {
         badgeContainer.innerHTML = `
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-bold border rounded-[3px] ${b.status_badge.bg} ${b.status_badge.text} ${b.status_badge.border}">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold border rounded-full ${b.status_badge.bg} ${b.status_badge.text} ${b.status_badge.border}">
                 <span class="w-2 h-2 rounded-full ${b.status_badge.dot}"></span>
                 <span>${b.booking_status}</span>
             </span>
@@ -346,7 +346,7 @@ function applyCustomerSelection(mode, cust) {
     const vipBadge = document.getElementById(`${mode}_cust_vip_badge`);
     if (vipBadge) {
         if (cust.vip) {
-            vipBadge.innerHTML = '<span class="px-1.5 py-0.2 text-[9px] font-black uppercase tracking-wider bg-amber-100 text-amber-800 border border-amber-200 rounded-[2px]">VIP</span>';
+            vipBadge.innerHTML = '<span class="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-700 border border-amber-200/80 rounded-md">VIP</span>';
         } else {
             vipBadge.innerHTML = '';
         }
@@ -383,9 +383,9 @@ function openVehiclePickerModal(targetMode) {
     currentVehicleTypeFilter = 'All';
     document.querySelectorAll('.vehicle-filter-chip').forEach(btn => {
         if (btn.textContent.trim() === 'All') {
-            btn.className = 'vehicle-filter-chip px-2.5 py-1 text-[11px] font-bold rounded-[3px] bg-red-600 text-white border border-red-600 transition-colors';
+            btn.className = 'vehicle-filter-chip px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 text-white shadow-xs transition-colors';
         } else {
-            btn.className = 'vehicle-filter-chip px-2.5 py-1 text-[11px] font-bold rounded-[3px] bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 transition-colors';
+            btn.className = 'vehicle-filter-chip px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors';
         }
     });
 
@@ -407,11 +407,11 @@ function filterVehiclePickerByType(type, btnEl) {
     currentVehicleTypeFilter = type;
 
     document.querySelectorAll('.vehicle-filter-chip').forEach(btn => {
-        btn.className = 'vehicle-filter-chip px-2.5 py-1 text-[11px] font-bold rounded-[3px] bg-white text-slate-700 border border-slate-300 hover:bg-slate-100 transition-colors';
+        btn.className = 'vehicle-filter-chip px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors';
     });
 
     if (btnEl) {
-        btnEl.className = 'vehicle-filter-chip px-2.5 py-1 text-[11px] font-bold rounded-[3px] bg-red-600 text-white border border-red-600 transition-colors';
+        btnEl.className = 'vehicle-filter-chip px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 text-white shadow-xs transition-colors';
     }
 
     filterVehiclePicker();
@@ -549,28 +549,28 @@ function selectStatusRadio(mode, status) {
         if (!label) return;
 
         if (isMatch) {
-            // Apply distinctive border & background per status
+            // Apply distinctive border & background per status with rounded-xl soft modern styling
             switch (status) {
                 case 'Confirmed':
-                    label.className = 'flex flex-col p-2.5 border-2 border-blue-500 bg-blue-50/50 rounded-[4px] cursor-pointer transition-all shadow-xs status-radio-card';
+                    label.className = 'flex items-center gap-2.5 p-2.5 border-2 border-blue-400 bg-blue-50/60 rounded-xl cursor-pointer transition-all status-radio-card';
                     break;
                 case 'Pending':
-                    label.className = 'flex flex-col p-2.5 border-2 border-amber-500 bg-amber-50/50 rounded-[4px] cursor-pointer transition-all shadow-xs status-radio-card';
+                    label.className = 'flex items-center gap-2.5 p-2.5 border-2 border-amber-400 bg-amber-50/60 rounded-xl cursor-pointer transition-all status-radio-card';
                     break;
                 case 'Ongoing':
-                    label.className = 'flex flex-col p-2.5 border-2 border-emerald-500 bg-emerald-50/50 rounded-[4px] cursor-pointer transition-all shadow-xs status-radio-card';
+                    label.className = 'flex items-center gap-2.5 p-2.5 border-2 border-emerald-400 bg-emerald-50/60 rounded-xl cursor-pointer transition-all status-radio-card';
                     break;
                 case 'Completed':
-                    label.className = 'flex flex-col p-2.5 border-2 border-slate-600 bg-slate-100 rounded-[4px] cursor-pointer transition-all shadow-xs status-radio-card';
+                    label.className = 'flex items-center gap-2.5 p-2.5 border-2 border-slate-400 bg-slate-100 rounded-xl cursor-pointer transition-all status-radio-card';
                     break;
                 case 'Cancelled':
-                    label.className = 'flex flex-col p-2.5 border-2 border-red-500 bg-red-50/50 rounded-[4px] cursor-pointer transition-all shadow-xs status-radio-card';
+                    label.className = 'flex items-center gap-2.5 p-2.5 border-2 border-red-400 bg-red-50/60 rounded-xl cursor-pointer transition-all status-radio-card';
                     break;
                 default:
-                    label.className = 'flex flex-col p-2.5 border-2 border-slate-800 bg-slate-50 rounded-[4px] cursor-pointer transition-all shadow-xs status-radio-card';
+                    label.className = 'flex items-center gap-2.5 p-2.5 border-2 border-slate-400 bg-slate-50 rounded-xl cursor-pointer transition-all status-radio-card';
             }
         } else {
-            label.className = 'flex flex-col p-2.5 border border-slate-300 bg-white rounded-[4px] cursor-pointer transition-all hover:shadow-xs status-radio-card';
+            label.className = 'flex items-center gap-2.5 p-2.5 border border-slate-200 bg-white rounded-xl cursor-pointer transition-all hover:bg-slate-50 status-radio-card';
         }
     });
 }

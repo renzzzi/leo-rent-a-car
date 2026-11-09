@@ -63,10 +63,10 @@ function viewCustomerDetails(c) {
 
     let badgesHtml = '';
     if (parseInt(c.is_vip, 10)) {
-        badgesHtml += '<span class="px-2 py-0.5 text-xs font-black bg-amber-100 text-amber-800 border border-amber-200 rounded-[2px] mr-1">VIP</span>';
+        badgesHtml += '<span class="px-2 py-0.5 text-xs font-bold uppercase bg-amber-50 text-amber-700 border border-amber-200/80 rounded-md mr-1">VIP</span>';
     }
     if (parseInt(c.is_returning, 10)) {
-        badgesHtml += '<span class="px-2 py-0.5 text-xs font-bold bg-blue-100 text-blue-700 border border-blue-200 rounded-[2px]">Returning</span>';
+        badgesHtml += '<span class="px-2 py-0.5 text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200/80 rounded-md">Returning</span>';
     }
     document.getElementById('view-cust-badges').innerHTML = badgesHtml;
 

@@ -75,7 +75,7 @@ function viewVehicleDetails(v) {
     const badgeEl = document.getElementById('view-veh-badge');
     if (badgeEl && v.status_badge) {
         badgeEl.innerHTML = `
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold border rounded-[3px] ${v.status_badge.bg} ${v.status_badge.text} ${v.status_badge.border}">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold border rounded-full ${v.status_badge.bg} ${v.status_badge.text} ${v.status_badge.border}">
                 <span class="w-1.5 h-1.5 rounded-full ${v.status_badge.dot}"></span>
                 <span>${v.status}</span>
             </span>

@@ -62,7 +62,7 @@ function viewDriverDetails(d) {
     const badgeEl = document.getElementById('view-driver-badge');
     if (badgeEl && d.status_badge) {
         badgeEl.innerHTML = `
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold border rounded-[3px] ${d.status_badge.bg} ${d.status_badge.text} ${d.status_badge.border}">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold border rounded-full ${d.status_badge.bg} ${d.status_badge.text} ${d.status_badge.border}">
                 <span class="w-1.5 h-1.5 rounded-full ${d.status_badge.dot}"></span>
                 <span>${d.status}</span>
             </span>

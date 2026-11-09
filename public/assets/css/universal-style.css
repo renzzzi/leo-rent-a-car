@@ -1,8 +1,8 @@
 /**
  * Leo Rent-A-Car – Universal Design System
- * Aesthetic: Professional Executive Automotive Operations
- * Palette: Clean White & Slate with Signature Crimson Red (#DC2626)
- * Geometry: Softly Rounded – 6px default / 8px panels / 10px modals
+ * Aesthetic: Modern Executive Automotive Operations
+ * Palette: Clean Slate & Crisp White with Signature Crimson Red (#DC2626)
+ * Geometry: Balanced Modern Corners (8px default / 12px cards / 16px modals)
  */
 
 :root {
@@ -12,12 +12,11 @@
     --brand-lightred: #FEF2F2;
     --brand-redborder: #FECACA;
 
-    /* Soft-but-not-round geometry tokens */
-    --radius-xs: 4px;
+    /* Balanced modern geometry tokens */
     --radius-sm: 6px;
     --radius-md: 8px;
-    --radius-lg: 10px;
-    --radius-xl: 12px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
 }
 
 /* Base typography & rendering */
@@ -26,17 +25,12 @@ body, * {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Utility border-radius helpers */
-.rounded-xs  { border-radius: 4px !important; }
-.rounded-sm  { border-radius: 6px !important; }
-.rounded-md  { border-radius: 8px !important; }
-
-/* Universal inputs & controls: softened 6px border-radius */
+/* Universal inputs & controls: modern 8px border-radius */
 input, select, textarea {
-    border-radius: 6px !important;
+    border-radius: 8px !important;
 }
 button {
-    border-radius: 6px !important;
+    border-radius: 8px !important;
 }
 
 /* Modern crisp tables */
@@ -51,10 +45,10 @@ button {
     font-weight: 700;
 }
 .table-sharp tr:last-child td:first-child {
-    border-bottom-left-radius: 6px;
+    border-bottom-left-radius: 8px;
 }
 .table-sharp tr:last-child td:last-child {
-    border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 8px;
 }
 
 /* Smooth micro-interactions */
@@ -68,11 +62,11 @@ button {
     height: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: #f1f5f9;
+    background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
     background: #cbd5e1;
-    border-radius: 4px;
+    border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #94a3b8;
@@ -80,18 +74,8 @@ button {
 
 /* Modal backdrop & animations */
 .modal-backdrop-custom {
-    background-color: rgba(15, 23, 42, 0.5);
-    backdrop-filter: blur(3px);
-}
-
-/* Modal inner panels */
-.modal-panel {
-    border-radius: 10px !important;
-}
-
-/* Card hover ring helper */
-.card-hover-ring:hover {
-    box-shadow: 0 0 0 2px #DC2626;
+    background-color: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(4px);
 }
 
 /* Print styling for booking vouchers/receipts */
