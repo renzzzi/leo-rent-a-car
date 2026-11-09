@@ -18,18 +18,20 @@ class Database {
 
             $config = require __DIR__ . '/../../config/database.php';
 
-            $dsn = "mysql:host={$config['host']};dbname={$config['dbname']};charset={$config['charset']}";
+            $port = !empty($config['port']) ? ";port={$config['port']}" : '';
+            $dsn = "mysql:host={$config['host']}{$port};dbname={$config['dbname']};charset={$config['charset']}";
 
             try {
                 self::$connection = new PDO(
                     $dsn,
                     $config['username'],
-                    $config['password']
+                    $config['password'],
+                    [
+                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                        PDO::ATTR_EMULATE_PREPARES => false,
+                    ]
                 );
-
-                self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                self::$connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
             } catch (PDOException $e) {
                 die('Database connection failed: ' . $e->getMessage());
             }
